@@ -18,4 +18,4 @@
 bin=`dirname "$0"`
 bin=`cd "$bin"; pwd`
 
-java -jar $bin/../whirr-cli-*.jar "$@"
+java -jar $bin/../cli/target/whirr-cli-*-incubating-SNAPSHOT.jar "$@"
