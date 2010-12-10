@@ -22,7 +22,7 @@ set -x
 set -e
 
 C_VERSION=${1:-0.7.0}
-C_VERSION_SUFFIX=${2:--rc1}
+C_VERSION_SUFFIX=${2:--rc2}
 
 C_MAJOR_VERSION=`echo "$C_VERSION" | cut -f -2 -d .`
 C_LONG_VERSION=${C_VERSION}${C_VERSION_SUFFIX}
