@@ -68,6 +68,8 @@ if [[ "0.6" == "$C_MAJOR_VERSION" ]] ; then
 else
   cp $CASSANDRA_HOME/conf/cassandra.yaml $C_CONF_DIR
   cp $CASSANDRA_HOME/conf/cassandra-env.sh $C_CONF_DIR
+  # FIXME: this is only necessary because CASSANDRA_CONF/HOME are not in root's environment as they should be
+  sed -i -e "s|CASSANDRA_CONF=\$CASSANDRA_HOME/conf|CASSANDRA_CONF=$C_CONF_DIR|" $CASSANDRA_HOME/bin/cassandra.in.sh
 fi
 
 # Ensure Cassandra starts on boot
